@@ -1,5 +1,5 @@
 import Navbar from "./Navbar";
-import VideoBackground from "./VideoBackground";
+import AnimatedBackground from "./AnimatedBackground";
 import NeonStreaks from "./NeonStreaks";
 import GlowEffects from "./GlowEffects";
 import HeroContent from "./HeroContent";
@@ -7,13 +7,13 @@ import HeroContent from "./HeroContent";
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen overflow-hidden bg-background">
-      {/* Video Background */}
-      <VideoBackground src="/videos/hero-background.mp4" />
+      {/* Canvas Animated Background */}
+      <AnimatedBackground />
       
-      {/* Neon Light Streaks */}
+      {/* Additional CSS Neon Streaks */}
       <NeonStreaks />
       
-      {/* Glow Effects */}
+      {/* Glow Effects Overlay */}
       <GlowEffects />
       
       {/* Navbar */}

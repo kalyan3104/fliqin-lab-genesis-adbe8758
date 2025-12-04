@@ -5,9 +5,9 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { name: "Labs", href: "#labs" },
-    { name: "Ventures", href: "#ventures" },
-    { name: "Hackathons", href: "#hackathons" },
+    { name: "FLiQin Solutions", href: "#solutions" },
+    { name: "Studio", href: "#studio" },
+    { name: "Agency", href: "#agency" },
     { name: "Contact", href: "#contact" },
   ];
 

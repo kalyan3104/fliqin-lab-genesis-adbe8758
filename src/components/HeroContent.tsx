@@ -1,6 +1,9 @@
 import AnimatedCursor from "./AnimatedCursor";
+import TypingText from "./TypingText";
 
 const HeroContent = () => {
+  const words = ["Labs", "Solutions", "Agency", "Studio"];
+
   return (
     <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 text-center pt-20">
       <div className="max-w-5xl mx-auto">
@@ -9,7 +12,7 @@ const HeroContent = () => {
           className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black tracking-tight text-foreground mb-6 animate-fade-up"
           style={{ animationDelay: "0.1s" }}
         >
-          FLiQin Labs
+          FLiQin <TypingText words={words} typingSpeed={120} deletingSpeed={80} pauseDuration={2500} />
           <AnimatedCursor className="h-[0.7em]" />
         </h1>
         

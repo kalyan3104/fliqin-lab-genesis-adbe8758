@@ -8,7 +8,6 @@ const Navbar = () => {
     { name: "FLiQin Solutions", href: "#solutions" },
     { name: "Studio", href: "#studio" },
     { name: "Agency", href: "#agency" },
-    { name: "Contact", href: "#contact" },
   ];
 
   return (

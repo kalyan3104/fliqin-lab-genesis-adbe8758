@@ -10,15 +10,14 @@ const TypingAnimation = () => {
 
   useEffect(() => {
     const word = words[currentWordIndex];
-    const typingSpeed = isDeleting ? 80 : 120;
-    const pauseTime = 2000;
+    const typingSpeed = isDeleting ? 50 : 100;
 
     const timeout = setTimeout(() => {
       if (!isDeleting) {
         if (currentText.length < word.length) {
           setCurrentText(word.slice(0, currentText.length + 1));
         } else {
-          setTimeout(() => setIsDeleting(true), pauseTime);
+          setIsDeleting(true);
         }
       } else {
         if (currentText.length > 0) {
@@ -35,7 +34,7 @@ const TypingAnimation = () => {
 
   return (
     <span className="inline-flex items-baseline">
-      <span className="min-w-[200px] sm:min-w-[280px] md:min-w-[380px] lg:min-w-[480px] inline-block text-left">
+      <span className="inline-block text-left">
         {currentText}
       </span>
       <AnimatedCursor className="h-[0.7em]" />

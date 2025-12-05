@@ -1,4 +1,4 @@
-import TypingAnimation from "./TypingAnimation";
+import AnimatedCursor from "./AnimatedCursor";
 
 const HeroContent = () => {
   return (
@@ -9,8 +9,8 @@ const HeroContent = () => {
           className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black tracking-tight text-foreground mb-6 animate-fade-up"
           style={{ animationDelay: "0.1s" }}
         >
-          <span className="block">FLiQin</span>
-          <span className="block"><TypingAnimation /></span>
+          FLiQin Labs
+          <AnimatedCursor className="h-[0.7em]" />
         </h1>
         
         {/* Serif Subheadline */}

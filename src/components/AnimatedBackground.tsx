@@ -36,24 +36,22 @@ const AnimatedBackground = () => {
       "rgba(166, 107, 255, ", // Purple
       "rgba(255, 79, 203, ",  // Pink
       "rgba(59, 130, 246, ",  // Blue
-      "rgba(193, 53, 255, ",  // Magenta
-      "rgba(52, 224, 255, ",  // Cyan
     ];
 
-    // Initialize streaks
-    for (let i = 0; i < 30; i++) {
+    // Initialize streaks - fewer and slower
+    for (let i = 0; i < 12; i++) {
       streaks.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height - canvas.height,
-        speed: 1 + Math.random() * 3,
-        length: 100 + Math.random() * 300,
-        width: 1 + Math.random() * 3,
+        speed: 0.3 + Math.random() * 0.8,
+        length: 80 + Math.random() * 150,
+        width: 0.5 + Math.random() * 1.5,
         color: colors[Math.floor(Math.random() * colors.length)],
-        opacity: 0.3 + Math.random() * 0.5,
+        opacity: 0.15 + Math.random() * 0.25,
       });
     }
 
-    // Glowing orbs
+    // Glowing orbs - softer and slower
     const orbs: Array<{
       x: number;
       y: number;
@@ -62,10 +60,9 @@ const AnimatedBackground = () => {
       pulse: number;
       pulseSpeed: number;
     }> = [
-      { x: 0.2, y: 0.8, radius: 300, color: "rgba(166, 107, 255, 0.15)", pulse: 0, pulseSpeed: 0.02 },
-      { x: 0.8, y: 0.7, radius: 250, color: "rgba(255, 79, 203, 0.12)", pulse: Math.PI, pulseSpeed: 0.015 },
-      { x: 0.5, y: 0.9, radius: 400, color: "rgba(59, 130, 246, 0.1)", pulse: Math.PI / 2, pulseSpeed: 0.018 },
-      { x: 0.3, y: 0.6, radius: 200, color: "rgba(193, 53, 255, 0.08)", pulse: Math.PI / 4, pulseSpeed: 0.025 },
+      { x: 0.2, y: 0.85, radius: 250, color: "rgba(166, 107, 255, 0.08)", pulse: 0, pulseSpeed: 0.008 },
+      { x: 0.8, y: 0.8, radius: 200, color: "rgba(255, 79, 203, 0.06)", pulse: Math.PI, pulseSpeed: 0.006 },
+      { x: 0.5, y: 0.9, radius: 300, color: "rgba(59, 130, 246, 0.05)", pulse: Math.PI / 2, pulseSpeed: 0.007 },
     ];
 
     const animate = () => {
@@ -117,9 +114,9 @@ const AnimatedBackground = () => {
         ctx.lineTo(streak.x, streak.y + streak.length);
         ctx.stroke();
 
-        // Add glow
-        ctx.shadowColor = streak.color + "0.8)";
-        ctx.shadowBlur = 20;
+      // Add subtle glow
+        ctx.shadowColor = streak.color + "0.4)";
+        ctx.shadowBlur = 10;
         ctx.stroke();
         ctx.shadowBlur = 0;
 
@@ -134,11 +131,11 @@ const AnimatedBackground = () => {
         }
       });
 
-      // Add horizontal glow lines
-      const horizGlow = ctx.createLinearGradient(0, canvas.height * 0.7, 0, canvas.height);
+      // Add subtle horizontal glow
+      const horizGlow = ctx.createLinearGradient(0, canvas.height * 0.75, 0, canvas.height);
       horizGlow.addColorStop(0, "transparent");
-      horizGlow.addColorStop(0.5, "rgba(166, 107, 255, 0.05)");
-      horizGlow.addColorStop(1, "rgba(255, 79, 203, 0.1)");
+      horizGlow.addColorStop(0.6, "rgba(166, 107, 255, 0.03)");
+      horizGlow.addColorStop(1, "rgba(255, 79, 203, 0.05)");
       ctx.fillStyle = horizGlow;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 

@@ -103,6 +103,11 @@ export default {
             boxShadow: "0 0 30px hsl(270 100% 71% / 0.7), 0 0 60px hsl(270 100% 71% / 0.5)" 
           },
         },
+        "gradient-shift": {
+          "0%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+          "100%": { backgroundPosition: "0% 50%" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
